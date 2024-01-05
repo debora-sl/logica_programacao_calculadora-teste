@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora - 4 Operações Básicas</title>
+    <title> Calculadora - 4 Operações Básicas</title>
 </head>
 <body>
     
@@ -12,17 +12,40 @@
 
         var operacao = prompt("Olá, informe a operação que deseja (+ para soma, - para subtração, * para multiplicação e / para divisão: )");
 
+        var operacaoNumero1 = Number(prompt("Digite o número 1: "));
+        var operacaoNumero2 = Number(prompt("Digite o número 2: "));
+        var resultado;
+
         if (operacao == "+") {
-            var operacaoNumero1 = Number(prompt("Digite o número 1: "));
-            var operacaoNumero2 = Number(prompt("Digite o número 2: "));
-            var resultado = operacaoNumero1 + operacaoNumero2;
-            alert(`A soma de ${operacaoNumero1} + ${operacaoNumero2} = ${resultado}`);
+            somar(operacaoNumero1, operacaoNumero2);
         } else if (operacao == "-") {
-            var operacaoNumero1 = Number(prompt("Digite o número 1: "));
-            var operacaoNumero2 = Number(prompt("Digite o número 2: "));
-            var resultado = operacaoNumero1 - operacaoNumero2;
-            alert(`A subtração de ${operacaoNumero1} - ${operacaoNumero2} = ${resultado}`);
+            subtrair(operacaoNumero1, operacaoNumero2);
+        } else if (operacao == "*") {
+            multiplicar(operacaoNumero1, operacaoNumero2);
+        } else if (operacao == "/") {
+            dividir(operacaoNumero1, operacaoNumero2)
+        } else alert(`A tecla digitada é inválida.` );
+
+
+        function somar(operacaoNumero1, operacaoNumero2) {
+            resultado = operacaoNumero1 + operacaoNumero2;                          
+            return alert(`A soma de ${operacaoNumero1} + ${operacaoNumero2} = ${resultado}`);   
         }
+
+        function subtrair(operacaoNumero1, operacaoNumero2) {
+            resultado = operacaoNumero1 - operacaoNumero2;                          
+            return alert(`A subtração de ${operacaoNumero1} - ${operacaoNumero2} = ${resultado}`);   
+        }
+
+        function multiplicar(operacaoNumero1, operacaoNumero2) {
+            resultado = operacaoNumero1 * operacaoNumero2;                          
+            return alert(`A multiplicação de ${operacaoNumero1} x ${operacaoNumero2} = ${resultado}`);   
+        } 
+
+        function dividir(operacaoNumero1, operacaoNumero2) {
+            resultado = operacaoNumero1 / operacaoNumero2;                          
+            return alert(`A divisão de ${operacaoNumero1} / ${operacaoNumero2} = ${resultado}`);   
+        } 
     </script>
 </body>
 </html>
